@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "banner-central-axity-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/bannerCentralAxity/BannerCentralAxityWebPart.js",
+          "manifest": "./src/webparts/bannerCentralAxity/BannerCentralAxityWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "BannerCentralAxityWebPartStrings": "lib/webparts/bannerCentralAxity/loc/{locale}.js"
+  }
+}

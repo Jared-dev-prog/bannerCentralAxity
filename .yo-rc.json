@@ -1,0 +1,21 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "16.13.0",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.9.1"
+    },
+    "version": "1.17.4",
+    "libraryName": "banner-central-axity",
+    "libraryId": "2d8c3410-b46c-4ac1-9a79-9ad84441b61f",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "banner-central-axity",
+    "solutionShortDescription": "banner-central-axity description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}
