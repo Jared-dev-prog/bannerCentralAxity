@@ -1,9 +1,5 @@
 declare const styles: {
-    bannerCentralAxity: string;
-    teams: string;
-    welcome: string;
-    welcomeImage: string;
-    links: string;
+    xcontainer: string;
 };
 export default styles;
 //# sourceMappingURL=BannerCentralAxity.module.scss.d.ts.map

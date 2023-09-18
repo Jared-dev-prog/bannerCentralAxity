@@ -1,4 +1,4 @@
-define("c123f4ce-dc9f-4f5b-a962-e81db49ba1e8_0.0.1", ["@microsoft/sp-property-pane","@microsoft/sp-lodash-subset","BannerCentralAxityWebPartStrings","@microsoft/sp-core-library","@microsoft/sp-webpart-base","react","react-dom"], function(__WEBPACK_EXTERNAL_MODULE__26ea__, __WEBPACK_EXTERNAL_MODULE_Pk8u__, __WEBPACK_EXTERNAL_MODULE_UU7D__, __WEBPACK_EXTERNAL_MODULE_UWqr__, __WEBPACK_EXTERNAL_MODULE_br4S__, __WEBPACK_EXTERNAL_MODULE_cDcd__, __WEBPACK_EXTERNAL_MODULE_faye__) { return /******/ (function(modules) { // webpackBootstrap
+define("c123f4ce-dc9f-4f5b-a962-e81db49ba1e8_0.0.1", ["@microsoft/sp-property-pane","BannerCentralAxityWebPartStrings","@microsoft/sp-core-library","@microsoft/sp-webpart-base","react","react-dom"], function(__WEBPACK_EXTERNAL_MODULE__26ea__, __WEBPACK_EXTERNAL_MODULE_UU7D__, __WEBPACK_EXTERNAL_MODULE_UWqr__, __WEBPACK_EXTERNAL_MODULE_br4S__, __WEBPACK_EXTERNAL_MODULE_cDcd__, __WEBPACK_EXTERNAL_MODULE_faye__) { return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
@@ -80,34 +80,6 @@ define("c123f4ce-dc9f-4f5b-a962-e81db49ba1e8_0.0.1", ["@microsoft/sp-property-pa
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/
-/******/ 	// Set the webpack public path
-/******/ 	(function () {
-/******/ 	  var scripts = document.getElementsByTagName('script');
-/******/ 	  var regex = /banner-central-axity-web-part\.js/i;
-/******/ 	  var publicPath;
-/******/
-/******/ 	  if (scripts && scripts.length) {
-/******/ 	    for (var i = 0; i < scripts.length; i++) {
-/******/ 	      if (!scripts[i]) continue;
-/******/ 	      var path = scripts[i].getAttribute('src');
-/******/ 	      if (path && path.match(regex)) {
-/******/ 	        publicPath = path.substring(0, path.lastIndexOf('/') + 1);
-/******/ 	        break;
-/******/ 	      }
-/******/ 	    }
-/******/ 	  }
-/******/
-/******/ 	  if (!publicPath) {
-/******/ 	    for (var global in window.__setWebpackPublicPathLoaderSrcRegistry__) {
-/******/ 	      if (global && global.match(regex)) {
-/******/ 	        publicPath = global.substring(0, global.lastIndexOf('/') + 1);
-/******/ 	        break;
-/******/ 	      }
-/******/ 	    }
-/******/ 	  }
-/******/ 	  __webpack_require__.p = publicPath;
-/******/ 	})();
-/******/ 	
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = "khcK");
 /******/ })
@@ -125,17 +97,6 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__26ea__;
 
 /***/ }),
 
-/***/ "3vlw":
-/*!******************************************************************!*\
-  !*** ./lib/webparts/bannerCentralAxity/assets/welcome-light.png ***!
-  \******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "welcome-light_1eaf582a9b78272e22113e1e733138b8.png";
-
-/***/ }),
-
 /***/ "5Lfq":
 /*!**************************************************************************!*\
   !*** ./lib/webparts/bannerCentralAxity/components/BannerCentralAxity.js ***!
@@ -148,66 +109,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "cDcd");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _BannerCentralAxity_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./BannerCentralAxity.module.scss */ "5qtb");
-/* harmony import */ var _microsoft_sp_lodash_subset__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @microsoft/sp-lodash-subset */ "Pk8u");
-/* harmony import */ var _microsoft_sp_lodash_subset__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_microsoft_sp_lodash_subset__WEBPACK_IMPORTED_MODULE_2__);
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
 
 
-
-var BannerCentralAxity = /** @class */ (function (_super) {
-    __extends(BannerCentralAxity, _super);
-    function BannerCentralAxity() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    BannerCentralAxity.prototype.render = function () {
-        var _a = this.props, description = _a.description, isDarkTheme = _a.isDarkTheme, environmentMessage = _a.environmentMessage, hasTeamsContext = _a.hasTeamsContext, userDisplayName = _a.userDisplayName;
-        return (react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("section", { className: "".concat(_BannerCentralAxity_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].bannerCentralAxity, " ").concat(hasTeamsContext ? _BannerCentralAxity_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].teams : '') },
-            react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: _BannerCentralAxity_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].welcome },
-                react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("img", { alt: "", src: isDarkTheme ? __webpack_require__(/*! ../assets/welcome-dark.png */ "j+We") : __webpack_require__(/*! ../assets/welcome-light.png */ "3vlw"), className: _BannerCentralAxity_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].welcomeImage }),
-                react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("h2", null,
-                    "Well done, ",
-                    Object(_microsoft_sp_lodash_subset__WEBPACK_IMPORTED_MODULE_2__["escape"])(userDisplayName),
-                    "!"),
-                react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", null, environmentMessage),
-                react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", null,
-                    "Web part property value: ",
-                    react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("strong", null, Object(_microsoft_sp_lodash_subset__WEBPACK_IMPORTED_MODULE_2__["escape"])(description)))),
-            react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", null,
-                react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("h3", null, "Welcome to SharePoint Framework!"),
-                react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("p", null, "The SharePoint Framework (SPFx) is a extensibility model for Microsoft Viva, Microsoft Teams and SharePoint. It's the easiest way to extend Microsoft 365 with automatic Single Sign On, automatic hosting and industry standard tooling."),
-                react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("h4", null, "Learn more about SPFx development:"),
-                react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("ul", { className: _BannerCentralAxity_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].links },
-                    react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("li", null,
-                        react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("a", { href: "https://aka.ms/spfx", target: "_blank", rel: "noreferrer" }, "SharePoint Framework Overview")),
-                    react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("li", null,
-                        react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("a", { href: "https://aka.ms/spfx-yeoman-graph", target: "_blank", rel: "noreferrer" }, "Use Microsoft Graph in your solution")),
-                    react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("li", null,
-                        react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("a", { href: "https://aka.ms/spfx-yeoman-teams", target: "_blank", rel: "noreferrer" }, "Build for Microsoft Teams using SharePoint Framework")),
-                    react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("li", null,
-                        react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("a", { href: "https://aka.ms/spfx-yeoman-viva", target: "_blank", rel: "noreferrer" }, "Build for Microsoft Viva Connections using SharePoint Framework")),
-                    react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("li", null,
-                        react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("a", { href: "https://aka.ms/spfx-yeoman-store", target: "_blank", rel: "noreferrer" }, "Publish SharePoint Framework applications to the marketplace")),
-                    react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("li", null,
-                        react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("a", { href: "https://aka.ms/spfx-yeoman-api", target: "_blank", rel: "noreferrer" }, "SharePoint Framework API reference")),
-                    react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("li", null,
-                        react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("a", { href: "https://aka.ms/m365pnp", target: "_blank", rel: "noreferrer" }, "Microsoft 365 Developer Community"))))));
-    };
-    return BannerCentralAxity;
-}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]));
+var BannerCentralAxity = function (props) {
+    return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: _BannerCentralAxity_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].xcontainer });
+};
 /* harmony default export */ __webpack_exports__["default"] = (BannerCentralAxity);
 
 
@@ -225,11 +131,7 @@ __webpack_require__.r(__webpack_exports__);
 /* tslint:disable */
 __webpack_require__(/*! ./BannerCentralAxity.module.css */ "y989");
 var styles = {
-    bannerCentralAxity: 'bannerCentralAxity_3f31186f',
-    teams: 'teams_3f31186f',
-    welcome: 'welcome_3f31186f',
-    welcomeImage: 'welcomeImage_3f31186f',
-    links: 'links_3f31186f'
+    xcontainer: 'xcontainer_4ac9b5a8'
 };
 /* harmony default export */ __webpack_exports__["default"] = (styles);
 /* tslint:enable */ 
@@ -342,17 +244,6 @@ function toComment(sourceMap) {
 
 /***/ }),
 
-/***/ "Pk8u":
-/*!**********************************************!*\
-  !*** external "@microsoft/sp-lodash-subset" ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE_Pk8u__;
-
-/***/ }),
-
 /***/ "UU7D":
 /*!***************************************************!*\
   !*** external "BannerCentralAxityWebPartStrings" ***!
@@ -405,17 +296,6 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_cDcd__;
 /***/ (function(module, exports) {
 
 module.exports = __WEBPACK_EXTERNAL_MODULE_faye__;
-
-/***/ }),
-
-/***/ "j+We":
-/*!*****************************************************************!*\
-  !*** ./lib/webparts/bannerCentralAxity/assets/welcome-dark.png ***!
-  \*****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "welcome-dark_dcd6e9e4aa4b30169bf8ab6002b643a7.png";
 
 /***/ }),
 
@@ -572,7 +452,7 @@ var BannerCentralAxityWebPart = /** @class */ (function (_super) {
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "JPst");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".bannerCentralAxity_3f31186f{color:\"[theme:bodyText, default: #323130]\";color:var(--bodyText);overflow:hidden;padding:1em}.bannerCentralAxity_3f31186f.teams_3f31186f{font-family:Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif}.welcome_3f31186f{text-align:center}.welcomeImage_3f31186f{max-width:420px;width:100%}.links_3f31186f a{color:\"[theme:link, default:#03787c]\";color:var(--link);text-decoration:none}.links_3f31186f a:hover{color:\"[theme:linkHovered, default: #014446]\";color:var(--linkHovered);text-decoration:underline}", ""]);
+exports.push([module.i, "@charset \"UTF-8\";.xcontainer_4ac9b5a8{background:purple url(/sites/CentralAxity/México/Consultoria2/Aplicaciones/PortafolioSoluciones/SiteAssets/imgs/portafioSoluciones.svg) no-repeat 50%;height:517px;overflow:hidden;position:relative;top:0;width:100%}", ""]);
 // Exports
 module.exports = exports;
 
