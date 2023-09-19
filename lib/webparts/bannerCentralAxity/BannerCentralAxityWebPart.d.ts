@@ -4,6 +4,8 @@ import { BaseClientSideWebPart } from "@microsoft/sp-webpart-base";
 import { IReadonlyTheme } from "@microsoft/sp-component-base";
 export interface IBannerCentralAxityWebPartProps {
     description: string;
+    title: string;
+    collectionData: any[];
 }
 export default class BannerCentralAxityWebPart extends BaseClientSideWebPart<IBannerCentralAxityWebPartProps> {
     private _isDarkTheme;

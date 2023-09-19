@@ -2,6 +2,7 @@ declare interface IBannerCentralAxityWebPartStrings {
   PropertyPaneDescription: string;
   BasicGroupName: string;
   DescriptionFieldLabel: string;
+  tituloSeccion: string;
   AppLocalEnvironmentSharePoint: string;
   AppLocalEnvironmentTeams: string;
   AppLocalEnvironmentOffice: string;
@@ -12,7 +13,7 @@ declare interface IBannerCentralAxityWebPartStrings {
   AppOutlookEnvironment: string;
 }
 
-declare module 'BannerCentralAxityWebPartStrings' {
+declare module "BannerCentralAxityWebPartStrings" {
   const strings: IBannerCentralAxityWebPartStrings;
   export = strings;
 }

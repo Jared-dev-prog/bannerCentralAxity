@@ -4,7 +4,7 @@ import styles from "./BannerCentralAxity.module.scss";
 
 const Bread: React.FC<ICollectionBreadcrumbs> = (props) => {
   const { breadcrumbs } = props;
-  console.log("breadcrumbs", breadcrumbs);
+
   return (
     <div className={`${styles.breadcrumbs}`}>
       {breadcrumbs !== undefined ? (
@@ -13,11 +13,8 @@ const Bread: React.FC<ICollectionBreadcrumbs> = (props) => {
             <div className={styles.item_breadcrumbs}>
               <div
                 className={`${
-                  breadcrumb.isActive
-                    ? styles.breadcrumbs_active
-                    : styles.breadcrumbs_inactive
-                }`}
-              >
+                  breadcrumb.isActive ? styles.breadcrumbs_active : styles.breadcrumbs_inactive
+                }`}>
                 {breadcrumb.titleBreadcrumbs}
               </div>
               <div>
@@ -29,8 +26,7 @@ const Bread: React.FC<ICollectionBreadcrumbs> = (props) => {
                       height="16"
                       fill="currentColor"
                       className={` ${styles.icon_breadcrumbs} bi bi-chevron-right`}
-                      viewBox="0 0 16 16"
-                    >
+                      viewBox="0 0 16 16">
                       {" "}
                       <path
                         fill-rule="evenodd"

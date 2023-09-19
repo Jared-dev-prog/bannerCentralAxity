@@ -4,6 +4,7 @@ export interface IBannerCentralAxityProps {
     hasTeamsContext: boolean;
     userDisplayName: any;
     infoBanner: InfoBanner;
+    collectionData: any[];
 }
 export interface IBreadcrumbs {
     titleBreadcrumbs: string;
@@ -22,5 +23,10 @@ export interface InfoBanner {
 }
 export interface ICollectionsBreadcrumbs {
     breadcrumbs: IBreadcrumbs[];
+}
+export interface IBannerInfoProps {
+    title: string;
+    imageURL: string;
+    description: string;
 }
 //# sourceMappingURL=IBannerCentralAxityProps.d.ts.map

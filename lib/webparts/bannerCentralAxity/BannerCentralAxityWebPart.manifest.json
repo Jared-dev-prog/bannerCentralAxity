@@ -15,14 +15,17 @@
   "supportedHosts": ["SharePointWebPart", "TeamsPersonalApp", "TeamsTab", "SharePointFullPage"],
   "supportsThemeVariants": true,
 
-  "preconfiguredEntries": [{
-    "groupId": "5c03119e-3074-46fd-976b-c60198311f70", // Advanced
-    "group": { "default": "Advanced" },
-    "title": { "default": "bannerCentralAxity" },
-    "description": { "default": "bannerCentralAxity description" },
-    "officeFabricIconFontName": "Page",
-    "properties": {
-      "description": "bannerCentralAxity"
+  "preconfiguredEntries": [
+    {
+      "groupId": "5c03119e-3074-46fd-976b-c60198311f70", // Advanced
+      "group": { "default": "Advanced" },
+      "title": { "default": "bannerCentralAxity" },
+      "description": { "default": "bannerCentralAxity description" },
+      "officeFabricIconFontName": "Page",
+      "properties": {
+        "description": "bannerCentralAxity",
+        "title": "Hola mundo"
+      }
     }
-  }]
+  ]
 }
