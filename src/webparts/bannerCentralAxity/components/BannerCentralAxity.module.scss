@@ -1,12 +1,33 @@
 @import "~@fluentui/react/dist/sass/References.scss";
 
-.xcontainer {
-  position: relative;
-  top: 0px;
-  width: 100%;
-  height: 517px;
-  overflow: hidden;
-  background: purple
-    url(/sites/CentralAxity/México/Consultoria2/Aplicaciones/PortafolioSoluciones/SiteAssets/imgs/portafioSoluciones.svg)
-    no-repeat center center;
+.p_3 {
+  padding: 15px;
+}
+.breadcrumbs {
+  padding: 15px 20px 15px 15px;
+  display: flex;
+  column-gap: 5px;
+  font-size: 17px;
+}
+.breadcrumbs_active {
+  color: #04d6ff;
+  font-weight: 800px;
+}
+.breadcrumbs_inactive {
+  color: #fff;
+  cursor: pointer;
+  &:hover {
+    color: #04d6ff;
+    font-weight: 800px;
+  }
+}
+.item_breadcrumbs {
+  display: flex;
+  column-gap: 5px;
+  justify-content: flex-start;
+}
+.icon_breadcrumbs {
+  width: 15px;
+  margin-top: 5px;
+  color: #fff;
 }

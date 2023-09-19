@@ -1,9 +1,31 @@
 import * as React from "react";
 import { IBannerCentralAxityProps } from "./IBannerCentralAxityProps";
-import styles from "./BannerCentralAxity.module.scss";
+import Bread from "./Bread";
 
 const BannerCentralAxity: React.FC<IBannerCentralAxityProps> = (props) => {
-  return <div className={styles.xcontainer}></div>;
+  const { infoBanner } = props;
+  console.log("info", infoBanner);
+  return (
+    <div className={`BannMod3`}>
+      <div
+        id="vpc_WebPart.BannerPortadaWebPart.external.c3998efa-dd20-46d5-8c8f-1b0046c402b5"
+        data-viewport-id="WebPart.BannerPortadaWebPart.external.c3998efa-dd20-46d5-8c8f-1b0046c402b5"
+        className={`BannMod2`}
+      >
+        <div
+          data-sp-feature-tag="BannerPortadaWebPart web part (BannerPortada)"
+          data-sp-feature-instance-id="c3998efa-dd20-46d5-8c8f-1b0046c402b5"
+          data-sp-web-part-id="cea4fcce-bad2-4ded-bc1a-12aa7c48730c"
+          className={`ms-SPLegacyFabricBlock BannMod1`}
+        >
+          <div id={`depurador`} />
+          <div id={`xcontainer`}>
+            <Bread breadcrumbs={infoBanner.breadcrumbs} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default BannerCentralAxity;
