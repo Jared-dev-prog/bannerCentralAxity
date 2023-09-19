@@ -3,7 +3,7 @@
   "solution": {
     "name": "banner-central-axity-client-side-solution",
     "id": "2d8c3410-b46c-4ac1-9a79-9ad84441b61f",
-    "version": "1.0.0.0",
+    "version": "1.0.0.2",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
@@ -30,7 +30,7 @@
         "title": "banner-central-axity Feature",
         "description": "The feature that activates elements of the banner-central-axity solution.",
         "id": "0ddce2dc-b64e-4c37-8a37-960459a74d49",
-        "version": "1.0.0.0"
+        "version": "1.0.0.2"
       }
     ]
   },

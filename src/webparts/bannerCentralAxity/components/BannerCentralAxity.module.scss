@@ -4,7 +4,7 @@
   padding: 15px;
 }
 .breadcrumbs {
-  padding: 15px 20px 15px 15px;
+  padding: 15px 10px 30px 15px;
   display: flex;
   column-gap: 5px;
   font-size: 17px;
@@ -16,9 +16,11 @@
 .breadcrumbs_inactive {
   color: #fff;
   cursor: pointer;
+  text-decoration: underline;
   &:hover {
     color: #04d6ff;
     font-weight: 800px;
+    text-decoration: none;
   }
 }
 .item_breadcrumbs {
@@ -30,4 +32,39 @@
   width: 15px;
   margin-top: 5px;
   color: #fff;
+}
+.info_banner {
+  width: 100%;
+  max-width: 1200px;
+  height: 85%;
+  row-gap: 15px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.text_title {
+  font-size: calc((100vw * 40) / 1300);
+  font-weight: 700;
+  font-family: "Vita";
+  color: #fff;
+  text-align: left;
+}
+.text_description {
+  font-size: calc((100vw * 18) / 1300);
+  font-weight: 400;
+  font-family: "Vita";
+  color: #fff;
+  text-align: left;
+  width: 60%;
+  padding-top: 20px;
+  margin: 0px;
+}
+.content_banner {
+  max-width: 1250px;
+  width: 100%;
+  height: 100%;
+  margin: auto;
 }

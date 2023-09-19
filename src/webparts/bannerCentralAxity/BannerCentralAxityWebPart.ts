@@ -1,7 +1,10 @@
 import * as React from "react";
 import * as ReactDom from "react-dom";
 import { Version } from "@microsoft/sp-core-library";
-import { IPropertyPaneConfiguration, PropertyPaneTextField } from "@microsoft/sp-property-pane";
+import {
+  IPropertyPaneConfiguration,
+  PropertyPaneTextField,
+} from "@microsoft/sp-property-pane";
 
 import {
   PropertyFieldCollectionData,
@@ -16,15 +19,18 @@ import BannerCentralAxity from "./components/BannerCentralAxity";
 import {
   IBannerCentralAxityProps,
   IBreadcrumbs,
+  ICollectionsInfo,
+  IDirectoryBreadcrumbsList,
   InfoBanner,
 } from "./components/IBannerCentralAxityProps";
 import { SPComponentLoader } from "@microsoft/sp-loader";
-import { ROUTES } from "./constants/routes";
+import { NAME_LIST, ROUTES } from "./constants/routes";
+import { SPHttpClient, SPHttpClientResponse } from "@microsoft/sp-http";
 
 export interface IBannerCentralAxityWebPartProps {
   description: string;
   title: string;
-  collectionData: any[];
+  collectionData: ICollectionsInfo[];
 }
 
 export default class BannerCentralAxityWebPart extends BaseClientSideWebPart<IBannerCentralAxityWebPartProps> {
@@ -38,9 +44,8 @@ export default class BannerCentralAxityWebPart extends BaseClientSideWebPart<IBa
   };
 
   public render(): void {
-    const element: React.ReactElement<IBannerCentralAxityProps> = React.createElement(
-      BannerCentralAxity,
-      {
+    const element: React.ReactElement<IBannerCentralAxityProps> =
+      React.createElement(BannerCentralAxity, {
         isDarkTheme: this._isDarkTheme,
         environmentMessage: this._environmentMessage,
         hasTeamsContext: !!this.context.sdks.microsoftTeams,
@@ -49,8 +54,7 @@ export default class BannerCentralAxityWebPart extends BaseClientSideWebPart<IBa
         ),
         infoBanner: this.infoBannerSubmit,
         collectionData: this.properties.collectionData,
-      }
-    );
+      });
 
     ReactDom.render(element, this.domElement);
   }
@@ -61,28 +65,56 @@ export default class BannerCentralAxityWebPart extends BaseClientSideWebPart<IBa
     });
   }
 
-  private _getBreadcrumbs(): Promise<InfoBanner> {
+  private async _getBreadcrumbs(): Promise<InfoBanner> {
+    const listTitle = NAME_LIST.breadcrumbs; // Reemplaza con el nombre real de la lista
+    const endpointList = `${ROUTES.generic}${ROUTES.routeListConsultatory}/_api/web/lists/getbytitle('${listTitle}')/items`;
+    const response: SPHttpClientResponse = await this.context.spHttpClient.get(
+      endpointList,
+      SPHttpClient.configurations.v1
+    );
+    const dataResponse = await response.json();
+    const dataBreadcrumbs = this._generateDataBreadcrumbs(dataResponse.value);
     const endpointImgs = `${this.context.pageContext.web.absoluteUrl}${ROUTES.siteImg}`;
     const info: InfoBanner = {
-      breadcrumbs: this._generateBreadcrumbs(),
+      breadcrumbs: this._generateBreadcrumbs(dataBreadcrumbs),
       description: "",
       title: "",
       img: `${endpointImgs}`,
     };
     return Promise.resolve(info);
   }
-  private _generateBreadcrumbs(): IBreadcrumbs[] {
+  private _generateDataBreadcrumbs(
+    dataResponse: IDirectoryBreadcrumbsList[]
+  ): IDirectoryBreadcrumbsList[] {
+    return dataResponse.map((item: IDirectoryBreadcrumbsList) => ({
+      ...item,
+    }));
+  }
+  private _generateBreadcrumbs(
+    dataBreadcrumbs: IDirectoryBreadcrumbsList[]
+  ): IBreadcrumbs[] {
     const routeLocation = this.context.pageContext.web.absoluteUrl;
     const routes = routeLocation.replace(ROUTES.generic, "");
     const arrayBread = routes.split("/");
     const lengthMax = arrayBread.length - 1;
     const listBreadcrumbs = arrayBread.map((route: string, index: number) => ({
-      titleBreadcrumbs: route,
+      titleBreadcrumbs: this._getAliasRoute(dataBreadcrumbs, route),
       url: this._getRoute(routeLocation, route),
       isActive: index >= lengthMax,
       separator: index < lengthMax,
     }));
     return listBreadcrumbs;
+  }
+  private _getAliasRoute(
+    dataBreadcrumbs: IDirectoryBreadcrumbsList[],
+    aliasRoute: string
+  ): string {
+    const itemData = dataBreadcrumbs.filter(
+      (data: IDirectoryBreadcrumbsList) => {
+        return data.Alias.toLowerCase() === aliasRoute.toLowerCase();
+      }
+    );
+    return itemData.length > 0 ? itemData[0]?.Title : aliasRoute;
   }
   private _getRoute(routeLocation: string, route: string): string {
     const index = routeLocation.indexOf(route);
@@ -98,9 +130,15 @@ export default class BannerCentralAxityWebPart extends BaseClientSideWebPart<IBa
     const { semanticColors } = currentTheme;
 
     if (semanticColors) {
-      this.domElement.style.setProperty("--bodyText", semanticColors.bodyText || null);
+      this.domElement.style.setProperty(
+        "--bodyText",
+        semanticColors.bodyText || null
+      );
       this.domElement.style.setProperty("--link", semanticColors.link || null);
-      this.domElement.style.setProperty("--linkHovered", semanticColors.linkHovered || null);
+      this.domElement.style.setProperty(
+        "--linkHovered",
+        semanticColors.linkHovered || null
+      );
     }
   }
 
@@ -132,7 +170,7 @@ export default class BannerCentralAxityWebPart extends BaseClientSideWebPart<IBa
                 PropertyFieldCollectionData("collectionData", {
                   key: "collectionData",
                   label: "Collection data",
-                  panelHeader: "Collection data panel header",
+                  panelHeader: "Ingrese al información del banner",
                   manageBtnLabel: "Manage collection data",
                   value: this.properties.collectionData,
                   fields: [
@@ -149,8 +187,9 @@ export default class BannerCentralAxityWebPart extends BaseClientSideWebPart<IBa
                       required: true,
                     },
                     {
-                      id: "imageURL",
-                      title: "Nombre de la imagen 'SiteAssets/imgs/'",
+                      id: "img",
+                      title:
+                        "Nombre de la imagen almacenada en 'SiteAssets/imgs/'",
                       type: CustomCollectionFieldType.string,
                       required: true,
                     },
