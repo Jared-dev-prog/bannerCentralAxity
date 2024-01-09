@@ -24,7 +24,7 @@ import {
   InfoBanner,
 } from "./components/IBannerCentralAxityProps";
 import { SPComponentLoader } from "@microsoft/sp-loader";
-import { NAME_LIST, ROUTES } from "./constants/routes";
+import { NAMEROUTES, NAME_LIST, ROUTES } from "./constants/routes";
 import { SPHttpClient, SPHttpClientResponse } from "@microsoft/sp-http";
 
 export interface IBannerCentralAxityWebPartProps {
@@ -67,7 +67,7 @@ export default class BannerCentralAxityWebPart extends BaseClientSideWebPart<IBa
 
   private async _getBreadcrumbs(): Promise<InfoBanner> {
     const listTitle = NAME_LIST.breadcrumbs; // Reemplaza con el nombre real de la lista
-    const endpointList = `${ROUTES.generic}${ROUTES.routeListConsultatory}/_api/web/lists/getbytitle('${listTitle}')/items`;
+    const endpointList = `${this._getUrlStyle()}/_api/web/lists/getbytitle('${listTitle}')/items`;
     const response: SPHttpClientResponse = await this.context.spHttpClient.get(
       endpointList,
       SPHttpClient.configurations.v1
@@ -82,6 +82,14 @@ export default class BannerCentralAxityWebPart extends BaseClientSideWebPart<IBa
       img: `${endpointImgs}`,
     };
     return Promise.resolve(info);
+  }
+  private _getUrlStyle(): string {
+    const urlAbsolute = this.context.pageContext.web.absoluteUrl;
+    const indexAlias = urlAbsolute.indexOf(NAMEROUTES.consultancyAlias);
+    const index = urlAbsolute.indexOf(NAMEROUTES.consultancy);
+    return indexAlias !== -1
+      ? `${urlAbsolute.substring(0, indexAlias)}${NAMEROUTES.consultancyAlias}`
+      : `${urlAbsolute.substring(0, index)}${NAMEROUTES.consultancy}`;
   }
   private _generateDataBreadcrumbs(
     dataResponse: IDirectoryBreadcrumbsList[]

@@ -3779,16 +3779,17 @@ __webpack_require__.r(__webpack_exports__);
 /* tslint:disable */
 __webpack_require__(/*! ./BannerCentralAxity.module.css */ "y989");
 var styles = {
-    p_3: 'p_3_0b4fb778',
-    breadcrumbs: 'breadcrumbs_0b4fb778',
-    breadcrumbs_active: 'breadcrumbs_active_0b4fb778',
-    breadcrumbs_inactive: 'breadcrumbs_inactive_0b4fb778',
-    item_breadcrumbs: 'item_breadcrumbs_0b4fb778',
-    icon_breadcrumbs: 'icon_breadcrumbs_0b4fb778',
-    info_banner: 'info_banner_0b4fb778',
-    text_title: 'text_title_0b4fb778',
-    text_description: 'text_description_0b4fb778',
-    content_banner: 'content_banner_0b4fb778'
+    p_3: 'p_3_91d38853',
+    breadcrumbs: 'breadcrumbs_91d38853',
+    breadcrumbs_active: 'breadcrumbs_active_91d38853',
+    breadcrumbs_inactive: 'breadcrumbs_inactive_91d38853',
+    item_breadcrumbs: 'item_breadcrumbs_91d38853',
+    icon_breadcrumbs: 'icon_breadcrumbs_91d38853',
+    info_banner: 'info_banner_91d38853',
+    text_title: 'text_title_91d38853',
+    text_description: 'text_description_91d38853',
+    content_banner: 'content_banner_91d38853',
+    'ms-DocumentCardPreview': 'ms-DocumentCardPreview_91d38853'
 };
 /* harmony default export */ __webpack_exports__["default"] = (styles);
 /* tslint:enable */ 
@@ -31489,7 +31490,7 @@ var BannerCentralAxityWebPart = /** @class */ (function (_super) {
                 switch (_a.label) {
                     case 0:
                         listTitle = _constants_routes__WEBPACK_IMPORTED_MODULE_9__["NAME_LIST"].breadcrumbs;
-                        endpointList = "".concat(_constants_routes__WEBPACK_IMPORTED_MODULE_9__["ROUTES"].generic).concat(_constants_routes__WEBPACK_IMPORTED_MODULE_9__["ROUTES"].routeListConsultatory, "/_api/web/lists/getbytitle('").concat(listTitle, "')/items");
+                        endpointList = "".concat(this._getUrlStyle(), "/_api/web/lists/getbytitle('").concat(listTitle, "')/items");
                         return [4 /*yield*/, this.context.spHttpClient.get(endpointList, _microsoft_sp_http__WEBPACK_IMPORTED_MODULE_10__["SPHttpClient"].configurations.v1)];
                     case 1:
                         response = _a.sent();
@@ -31508,6 +31509,14 @@ var BannerCentralAxityWebPart = /** @class */ (function (_super) {
                 }
             });
         });
+    };
+    BannerCentralAxityWebPart.prototype._getUrlStyle = function () {
+        var urlAbsolute = this.context.pageContext.web.absoluteUrl;
+        var indexAlias = urlAbsolute.indexOf(_constants_routes__WEBPACK_IMPORTED_MODULE_9__["NAMEROUTES"].consultancyAlias);
+        var index = urlAbsolute.indexOf(_constants_routes__WEBPACK_IMPORTED_MODULE_9__["NAMEROUTES"].consultancy);
+        return indexAlias !== -1
+            ? "".concat(urlAbsolute.substring(0, indexAlias)).concat(_constants_routes__WEBPACK_IMPORTED_MODULE_9__["NAMEROUTES"].consultancyAlias)
+            : "".concat(urlAbsolute.substring(0, index)).concat(_constants_routes__WEBPACK_IMPORTED_MODULE_9__["NAMEROUTES"].consultancy);
     };
     BannerCentralAxityWebPart.prototype._generateDataBreadcrumbs = function (dataResponse) {
         return dataResponse.map(function (item) { return (__assign({}, item)); });
@@ -34489,7 +34498,7 @@ var getStyles = Object(_Utilities__WEBPACK_IMPORTED_MODULE_2__["memoizeFunction"
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "JPst");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".p_3_0b4fb778{padding:15px}.breadcrumbs_0b4fb778{column-gap:5px;display:-ms-flexbox;display:flex;font-size:17px;padding:15px 10px 30px 15px}.breadcrumbs_active_0b4fb778{color:#04d6ff;font-weight:800px}.breadcrumbs_inactive_0b4fb778{color:#fff;cursor:pointer;text-decoration:underline}.breadcrumbs_inactive_0b4fb778:hover{color:#04d6ff;font-weight:800px;text-decoration:none}.item_breadcrumbs_0b4fb778{-ms-flex-pack:start;column-gap:5px;display:-ms-flexbox;display:flex;justify-content:flex-start}.icon_breadcrumbs_0b4fb778{color:#fff;margin-top:5px;width:15px}.info_banner_0b4fb778{-ms-flex-pack:center;-ms-flex-align:start;align-items:flex-start;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;height:85%;justify-content:center;max-width:1200px;padding:15px;row-gap:15px;width:100%}.text_title_0b4fb778{color:#fff;font-family:Vita;font-size:3.0769230769vw;font-weight:700;text-align:left}.text_description_0b4fb778{color:#fff;font-family:Vita;font-size:1.3846153846vw;font-weight:400;margin:0;padding-top:20px;text-align:left;width:60%}.content_banner_0b4fb778{height:100%;margin:auto;max-width:1250px;width:100%}", ""]);
+exports.push([module.i, ".p_3_91d38853{padding:15px}.breadcrumbs_91d38853{column-gap:5px;display:-ms-flexbox;display:flex;font-size:17px;padding:15px 10px 30px 15px}.breadcrumbs_active_91d38853{color:#04d6ff;font-weight:800px}.breadcrumbs_inactive_91d38853{color:#fff;cursor:pointer;text-decoration:underline}.breadcrumbs_inactive_91d38853:hover{color:#04d6ff;font-weight:800px;text-decoration:none}.item_breadcrumbs_91d38853{-ms-flex-pack:start;column-gap:5px;display:-ms-flexbox;display:flex;justify-content:flex-start}.icon_breadcrumbs_91d38853{color:#fff;margin-top:5px;width:15px}.info_banner_91d38853{-ms-flex-pack:center;-ms-flex-align:start;align-items:flex-start;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;height:85%;justify-content:center;max-width:1200px;padding:15px;row-gap:15px;width:100%}.text_title_91d38853{color:#fff;font-family:Vita;font-size:3.0769230769vw;font-weight:700;text-align:left}.text_description_91d38853{color:#fff;font-family:Vita;font-size:1.3846153846vw;font-weight:400;margin:0;padding-top:20px;text-align:left;width:60%}.content_banner_91d38853{height:100%;margin:auto;max-width:1250px;width:100%}.ms-DocumentCardPreview_91d38853 root-235{height:517px}", ""]);
 // Exports
 module.exports = exports;
 
@@ -38845,13 +38854,14 @@ var getItemStyles = function (props) {
 /*!*************************************************************!*\
   !*** ./lib/webparts/bannerCentralAxity/constants/routes.js ***!
   \*************************************************************/
-/*! exports provided: ROUTES, NAME_LIST */
+/*! exports provided: ROUTES, NAME_LIST, NAMEROUTES */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ROUTES", function() { return ROUTES; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NAME_LIST", function() { return NAME_LIST; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NAMEROUTES", function() { return NAMEROUTES; });
 var ROUTES = {
     generic: "https://intellego365.sharepoint.com/sites/",
     siteImg: "/SiteAssets/imgs/",
@@ -38861,6 +38871,10 @@ var ROUTES = {
 };
 var NAME_LIST = {
     breadcrumbs: "DirectorioBreadcrumbs",
+};
+var NAMEROUTES = {
+    consultancyAlias: "Consultoria2",
+    consultancy: "Consultoria",
 };
 
 

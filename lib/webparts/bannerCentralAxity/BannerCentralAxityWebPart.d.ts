@@ -15,6 +15,7 @@ export default class BannerCentralAxityWebPart extends BaseClientSideWebPart<IBa
     render(): void;
     protected onInit(): Promise<void>;
     private _getBreadcrumbs;
+    private _getUrlStyle;
     private _generateDataBreadcrumbs;
     private _generateBreadcrumbs;
     private _getAliasRoute;

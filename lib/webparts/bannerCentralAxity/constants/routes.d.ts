@@ -8,4 +8,8 @@ export declare const ROUTES: {
 export declare const NAME_LIST: {
     breadcrumbs: string;
 };
+export declare const NAMEROUTES: {
+    consultancyAlias: string;
+    consultancy: string;
+};
 //# sourceMappingURL=routes.d.ts.map

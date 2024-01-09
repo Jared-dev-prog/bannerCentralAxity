@@ -9,6 +9,7 @@ declare const styles: {
     text_title: string;
     text_description: string;
     content_banner: string;
+    'ms-DocumentCardPreview': string;
 };
 export default styles;
 //# sourceMappingURL=BannerCentralAxity.module.scss.d.ts.map

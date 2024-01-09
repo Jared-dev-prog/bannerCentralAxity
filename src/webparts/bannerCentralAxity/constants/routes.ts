@@ -9,3 +9,7 @@ export const ROUTES = {
 export const NAME_LIST = {
   breadcrumbs: "DirectorioBreadcrumbs",
 };
+export const NAMEROUTES = {
+  consultancyAlias: "Consultoria2",
+  consultancy: "Consultoria",
+};
